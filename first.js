@@ -63,4 +63,26 @@ const profile={
 
 console.log(typeof(profile.name));
 
+let a=1, b=4;
+console.log("a+b= ",a+b);
 
+console.log("a%b=", a%b);
+console.log("b^a= ",b**a);
+
+// Equal operator ( Don't check datatype, only check values)
+
+let no=5;
+let str="5";
+
+console.log(no==str); // true
+
+// Triple equal(check datatype as well as values)
+console.log(no === str); // false
+
+ct=5;
+
+let real_num=34;
+let prediction;
+do{
+    prediction=document.getElementById()
+}
