@@ -7,7 +7,6 @@ body{
     max-height: 100vh;
     max-width: 100vw;
     overflow-x: hidden;
-
 }
 #heading{
     font-size: 45px;
@@ -106,6 +105,12 @@ main{
     .game{
         margin-left: 1.1vh;
         padding: 2.5vh;
+    }
+    #reset-button{
+        /* margin-top: -10vmin; */
+    }
+    .game{
+        height: 50vh;
     }
 }
 .highlight{
