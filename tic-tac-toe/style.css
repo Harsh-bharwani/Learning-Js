@@ -87,3 +87,11 @@ main{
     color: #f2e8cf;
     width: 100%;
 }
+@media screen and (max-width: 600px){
+    button{
+        height: 25vmin;
+        width: 25vmin;
+    }
+    
+
+}
