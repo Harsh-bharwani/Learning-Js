@@ -59,7 +59,6 @@ main{
     justify-content: center;
 }
 .msg-container{
-    /* background-color: #F26419; */
     color: #EAEAEA;
     margin-top: 30px;
     height: 5vh;
@@ -87,11 +86,13 @@ main{
     color: #f2e8cf;
     width: 100%;
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 480px){
     button{
         height: 25vmin;
         width: 25vmin;
     }
-    
-
+    .game{
+        margin-left: 1.1vh;
+        padding: 2.5vh;
+    }
 }
