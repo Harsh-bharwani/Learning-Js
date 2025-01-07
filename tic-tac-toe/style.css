@@ -43,7 +43,7 @@ main{
     height: 10vmin;
     width: 25vmin;
     font-size: 25px;
-    box-shadow: 2px 2px 5px gold; 
+    box-shadow: 2px 2px 5px white; 
 }
 .reset-container{
     display: flex;
