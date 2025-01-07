@@ -10,29 +10,29 @@ body{
     color: #ffc300;
 }
 button{
-    height: 20vmin;
-    margin: 5px;
+    height: 15vmin;
+    width: 15vmin;
+    margin-top: 5px;
     border-radius: 5px;
     border: none;
     font-size: 10vmin;
     box-shadow: 5px 5px 5px black;
-    /* background-color: #DDDBCB; */
     background-color: #fcbf49;
-    /* color: #3E1929; */
     color: #c00202d4;
 }
 main{
-    /* border: 1px solid; */
+    border: 2px solid;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .game{
-    margin-top: 5vmin;
+    border: 2px solid;
+    height: 60vh;
     display: grid;
-    grid-template-columns: 3fr 3fr 3fr;
-    /* height: 70vh; */
-    width: 70vh;
+    grid-template-columns: 4fr 4fr 4fr;
+    width: 50vh;
 }
 #reset-button{
     background-color: black;
@@ -40,6 +40,7 @@ main{
     height: 5vmin;
     width: 25vmin;
     font-size: 20px;
+    margin-top: 20px;
 }
 .reset-container{
     display: flex;
