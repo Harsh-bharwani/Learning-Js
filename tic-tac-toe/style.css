@@ -107,7 +107,7 @@ main{
         padding: 2.5vh;
     }
     #reset-button{
-        /* margin-top: -10vmin; */
+        margin-top: -15vmin;
     }
     .game{
         height: 50vh;
