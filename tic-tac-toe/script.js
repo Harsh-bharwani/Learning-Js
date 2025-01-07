@@ -75,6 +75,9 @@ resetButton.addEventListener("click", ()=>{
     total_count=0;
     turn_container.classList.remove("print-reset-msg");
     turn_container.innerHTML="<span>Turn: </span><div id='turn'>O</div>"
+    for(box of boxes){
+        box.classList.remove("highlight");
+    }
 });
 
 function printWinner(arg){
