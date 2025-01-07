@@ -31,8 +31,7 @@ main{
     margin-top: 5vmin;
     display: grid;
     grid-template-columns: 3fr 3fr 3fr;
-    /* border: 1px solid; */
-    height: 70vh;
+    /* height: 70vh; */
     width: 70vh;
 }
 #reset-button{
