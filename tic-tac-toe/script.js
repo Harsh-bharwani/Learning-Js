@@ -84,10 +84,16 @@ function printWinner(arg){
     disable_button();
     printResetMsg()
 }
+function highlightPattern(pattern){
+    for(let ind of pattern){
+        boxes[ind].classList.add("highlight")
+    }
+}
 function checkWinner(){
     for(pattern of winPatterns){
         if(boxes[pattern[0]].innerText!="" && boxes[pattern[0]].innerText== boxes[pattern[1]].innerText && boxes[pattern[1]].innerText== boxes[pattern[2]].innerText ) {
             printWinner(boxes[pattern[0]].innerText);
+            highlightPattern(pattern);
             break;
         }
     }

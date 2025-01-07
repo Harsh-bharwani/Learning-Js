@@ -13,22 +13,24 @@ button{
     height: 15vmin;
     width: 15vmin;
     margin-top: 5px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
     font-size: 10vmin;
     box-shadow: 5px 5px 5px black;
     background-color: #fcbf49;
     color: #c00202d4;
 }
+button:hover{
+    background-color: #ff9900;
+    transform: scale(1.1);
+}
 main{
-    border: 2px solid;
     height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .game{
-    border: 2px solid;
     height: 60vh;
     display: grid;
     grid-template-columns: 4fr 4fr 4fr;
@@ -95,4 +97,8 @@ main{
         margin-left: 1.1vh;
         padding: 2.5vh;
     }
+}
+.highlight{
+    background-color: green;
+    transform: scale(1.1);
 }
