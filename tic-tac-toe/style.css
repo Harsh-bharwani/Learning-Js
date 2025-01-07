@@ -3,7 +3,11 @@
     margin: 0;
 }
 body{
-    background-color: #4C5B5C;
+    background-color: #0a4585;
+}
+#heading{
+    font-size: 45px;
+    color: #ffc300;
 }
 button{
     height: 20vmin;
@@ -12,8 +16,10 @@ button{
     border: none;
     font-size: 10vmin;
     box-shadow: 5px 5px 5px black;
-    background-color: #DDDBCB;
-    color: 3E1929;
+    /* background-color: #DDDBCB; */
+    background-color: #fcbf49;
+    /* color: #3E1929; */
+    color: #c00202d4;
 }
 main{
     /* border: 1px solid; */
@@ -62,4 +68,22 @@ main{
 }
 .hide{
     display: none;
+}
+.turn-container{
+    background-color: aqua;
+    margin-top: 3vmin;
+    width: 300px;
+    text-align: center;
+    background-color: #86cb17e5;
+    color: #333d29;
+    padding: 5px;
+    font-size: 23px;
+    font-weight: bold;
+    display: flex;
+    justify-content:space-around;
+}
+.print-reset-msg{
+    background-color: #bc4749;
+    color: #f2e8cf;
+    width: 100%;
 }
