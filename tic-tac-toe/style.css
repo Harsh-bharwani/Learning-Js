@@ -111,6 +111,10 @@ main{
     .game{
         height: 50vh;
     }
+    .msg-container{
+        font-size: 0.5vmin;
+        height: 4vh;
+    }
 }
 .highlight{
     background-color: green;
