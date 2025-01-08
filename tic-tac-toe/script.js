@@ -40,20 +40,25 @@ game.addEventListener("click", (e)=>{
         enable_button();
     }
     if(box.getAttribute("class")!="game"){   // box.tagName==="BUTTON"
-            if(turn.innerText==="O") {
-                box.innerText="O";
-                turn.innerText="X";                
-            }
-            else{
-                box.innerText="X"; 
-                turn.innerText="O";
-            }
-            box.disabled=true;
-            checkWinner();
-            total_count++;    
-            if(total_count==9){
-                drawMsg();   
-            };
+        if(turn.innerText==="O") {
+            box.innerText="O";
+            turn.innerText="X";                
+        }
+        else{
+            box.innerText="X"; 
+            turn.innerText="O";
+        }
+        // Add the scaling effect
+        box.classList.add("clicked");
+        setTimeout(() => {
+            box.classList.remove("clicked"); // Remove class after animation
+        }, 300);
+        box.disabled=true;
+        checkWinner();
+        total_count++;    
+        if(total_count==9){
+            drawMsg();   
+        };
     };
 });
 
@@ -105,14 +110,16 @@ function printWinner(arg){
     winMsg.innerText=`Congratulations, winner is ${arg} 🏆`;
     winMsg.classList.remove("hide");
     winMsg.classList.add("win-message");
+    highlightPattern(pattern);
     total_count=0;
     disable_button();
     printResetMsg();
-    createEmojiRain();
 }
+
 function highlightPattern(pattern){
     for(let ind of pattern){
-        boxes[ind].classList.add("highlight")
+        boxes[ind].classList.remove("clicked");
+        boxes[ind].classList.add("highlight");
     }
 }
 function checkWinner(){
