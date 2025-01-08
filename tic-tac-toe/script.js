@@ -15,13 +15,31 @@ let winPatterns=[
     [0,4,8],
     [2,4,6]
 ];
+const clickSound=new Audio("audio/clickSound.wav");
+const winSound=new Audio("audio/winSound.wav");
+
 let game=document.querySelector(".game");
+
+// boxes.addEventListener("click", ()=>{
+//     clickSound.play();
+// });
+function clickSoundPlay(){
+    clickSound.play();
+}
+function winSoundPlay(){
+    winSound.play();
+}
+// boxes.addEventListener("click",()=>{
+//     clickSoundPlay();
+// });
+
 game.addEventListener("click", (e)=>{
+    clickSoundPlay();
     let box=e.target;   
     if(total_count==0) {
         enable_button();
     }
-    if(box.getAttribute("class")!="game"){      
+    if(box.getAttribute("class")!="game"){   // box.tagName==="BUTTON"
             if(turn.innerText==="O") {
                 box.innerText="O";
                 turn.innerText="X";                
@@ -38,12 +56,13 @@ game.addEventListener("click", (e)=>{
             };
     };
 });
-    
+
 function drawMsg(){
     winMsg.innerText=`It's a draw.. 🤝`;
     total_count=0;
     disable_button();
     printResetMsg();
+    winSoundPlay();
 }
 function printResetMsg(){
     turn_container.classList.add("print-reset-msg");
@@ -70,6 +89,7 @@ function disable_button(){
     }
 }
 resetButton.addEventListener("click", ()=>{
+    clickSound.play();
     enable_button();
     winMsg.classList.add("hide");
     total_count=0;
@@ -81,11 +101,14 @@ resetButton.addEventListener("click", ()=>{
 });
 
 function printWinner(arg){
+    winSoundPlay();
     winMsg.innerText=`Congratulations, winner is ${arg} 🏆`;
     winMsg.classList.remove("hide");
+    winMsg.classList.add("win-message");
     total_count=0;
     disable_button();
-    printResetMsg()
+    printResetMsg();
+    createEmojiRain();
 }
 function highlightPattern(pattern){
     for(let ind of pattern){
@@ -101,4 +124,5 @@ function checkWinner(){
         }
     }
 }
-console.log(total_count);
+
+
