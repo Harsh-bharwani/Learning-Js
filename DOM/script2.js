@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+const { log } = require("console");
+const {JSDOM} = require("jsdom");
+const dom= new JSDOM(`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,8 +26,7 @@
     </div>
     <script src="script.js"></script>
 </body>
-</html>
+</html>`);
 
-
-
- 
+const document=dom.window.document
+console.log(document.querySelector("p").textContent)

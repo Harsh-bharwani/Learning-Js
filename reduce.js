@@ -15,3 +15,4 @@ const out=a.reduce((acc, cur)=>{
     return acc+cur;
 },0);
 console.log(out);
+

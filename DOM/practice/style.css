@@ -1,0 +1,14 @@
+.box{
+    height: 100px;
+    width: 200px;
+    background-color: aqua;
+    border: 2px solid ;
+    margin: 50px;
+}
+.content{
+    background-color: red;
+    color: white;
+}
+.newClass{
+    background-color: blue;
+}
