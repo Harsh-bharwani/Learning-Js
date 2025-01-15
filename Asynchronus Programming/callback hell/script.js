@@ -6,10 +6,6 @@ console.log("two");
     
 // }, 3000); // in mili seconds
 
-console.log("three"); // don't wait for setTimeour
-console.log("four"); // don't wait for setTimeout
-
-
 // Data coming with delay
 
 function getData(dataId, getNextData){
@@ -31,4 +27,7 @@ getData(1, ()=>{
     });   
 });
 
+
+console.log("three"); // don't wait for setTimeout
+console.log("four"); // don't wait for setTimeout
 
