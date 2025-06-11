@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="loadData()">
+    <table>
+        <thead border="1" cellpadding="2", cellspacing="2">
+            <th>PhotoID</th>
+            <th>Preview</th>
+            <th>CameraName</th>
+            <th>RoverName</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        const URL="https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY";
+       async function loadData() {
+            try{
+                let response=await fetch(URL);
+                let details=await response.json();
+                // console.log(details.photos);
+                
+                details.forEach((detail) => {
+                    let tr=document.createElement("tr");
+                    let tdID=document.createElement("td");
+                    let tdPreview=document.createElement("td");
+                    let tdCameraName=document.createElement("td");
+                    let tdRoverName=document.createElement("td");
+                    tdID.textContent=detail.id;
+                    tdPreview.innerHTML=`<img src=${detail.img_src} width="100" height="100">`;
+                    tdCameraName.textContent=detail.camera.name;
+                    tdRoverName.textContent=detail.rover.name;
+                    tr.append(tdID, tdPreview, tdCameraName, tdRoverName);
+                    document.querySelector(tbody).append(tr);
+                });
+            } catch(error){
+                console.log("Not fetched");
+            }
+
+       }
+    </script>
+</body>
+</html>
