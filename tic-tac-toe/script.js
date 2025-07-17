@@ -1,8 +1,6 @@
-let turn=document.querySelector("#turn"); // X 
 let turn_container=document.querySelector(".turn-container");
 let boxes=document.querySelectorAll("button");
 let resetButton=document.querySelector("#reset-button");
-// let newGame=document.querySelector("#new-game-button");
 let winMsg=document.querySelector(".msg-container");
 let total_count=0;
 let winPatterns=[
@@ -20,18 +18,12 @@ const winSound=new Audio("audio/winSound.wav");
 
 let game=document.querySelector(".game");
 
-// boxes.addEventListener("click", ()=>{
-//     clickSound.play();
-// });
 function clickSoundPlay(){
     clickSound.play();
 }
 function winSoundPlay(){
     winSound.play();
 }
-// boxes.addEventListener("click",()=>{
-//     clickSoundPlay();
-// });
 
 game.addEventListener("click", (e)=>{
     clickSoundPlay();
@@ -40,7 +32,8 @@ game.addEventListener("click", (e)=>{
         enable_button();
     }
     if(box.getAttribute("class")!="game"){   // box.tagName==="BUTTON"
-        if(turn.innerText==="O") {
+        let turn=document.querySelector("#turn"); 
+        if(turn.innerText=="O") {
             box.innerText="O";
             turn.innerText="X";                
         }
@@ -63,7 +56,7 @@ game.addEventListener("click", (e)=>{
 });
 
 function drawMsg(){
-    winMsg.innerText=`It's a draw.. 🤝`;
+    winMsg.innerText=`It's a draw... 🤝`;
     total_count=0;
     disable_button();
     printResetMsg();
@@ -72,7 +65,6 @@ function drawMsg(){
 function printResetMsg(){
     turn_container.classList.add("print-reset-msg");
     turn_container.innerHTML="<marquee scrollamount='10' direction='left'>Please Reset the game!</marquee>";
-    turn_container.classList.add("print-reset-msg");
 }
 function enable_button(){
     turn.innerText="O";
@@ -95,11 +87,11 @@ function disable_button(){
 }
 resetButton.addEventListener("click", ()=>{
     clickSound.play();
-    enable_button();
     winMsg.classList.add("hide");
     total_count=0;
     turn_container.classList.remove("print-reset-msg");
-    turn_container.innerHTML="<span>Turn: </span><div id='turn'>O</div>"
+    turn_container.innerHTML="<span>Turn: </span><div id='turn'>O</div>";
+    enable_button();
     for(box of boxes){
         box.classList.remove("highlight");
     }
@@ -107,7 +99,7 @@ resetButton.addEventListener("click", ()=>{
 
 function printWinner(arg){
     winSoundPlay();
-    winMsg.innerText=`Congratulations, winner is ${arg} 🏆`;
+    winMsg.innerText=`Congratulations🏆, Winner is ${arg}...`;
     winMsg.classList.remove("hide");
     winMsg.classList.add("win-message");
     highlightPattern(pattern);
